@@ -1,6 +1,10 @@
 # Backend Inventory API
 
-A portfolio-ready RESTful inventory management API built with **Python, Flask and SQLite**. It demonstrates product CRUD, stock movements, validation, low-stock monitoring and persistent storage.
+A portfolio-ready RESTful inventory management API built with **Python, Flask and SQLite**. It demonstrates product CRUD, stock movements, validation, low-stock monitoring, persistent storage, automated tests and CI.
+
+## What this project demonstrates
+
+This project is designed to show practical backend engineering skills that are useful in real business applications: inventory control, validation, transactional updates, REST API design and automated verification.
 
 ## Features
 
@@ -15,6 +19,8 @@ A portfolio-ready RESTful inventory management API built with **Python, Flask an
 - Dedicated low-stock endpoint
 - Health-check endpoint
 - Environment-based configuration
+- Automated API tests with `pytest`
+- GitHub Actions CI on pushes and pull requests
 
 ## API endpoints
 
@@ -48,6 +54,19 @@ python app.py
 
 The API runs by default at `http://127.0.0.1:5003`.
 
+## Run tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest -q
+```
+
+The test suite verifies health checks, product creation, stock operations, low-stock behavior, duplicate SKU handling and protection against negative stock.
+
+## Continuous integration
+
+The repository includes a GitHub Actions workflow that automatically runs the test suite on pushes to `main` and on pull requests.
+
 ## Example: create a product
 
 ```bash
@@ -66,11 +85,12 @@ curl -X POST http://127.0.0.1:5003/api/products/1/stock \
 
 ## Technology
 
-- Python 3
-- Flask 3
-- SQLite
-- REST/JSON
+`Python 3` · `Flask 3` · `SQLite` · `REST/JSON` · `pytest` · `GitHub Actions`
 
 ## Portfolio focus
 
-This project is intended to demonstrate backend/API fundamentals: routing, validation, relational persistence, business rules, error handling and maintainable REST design.
+This project demonstrates backend/API fundamentals: routing, validation, relational persistence, business rules, error handling, testability and maintainable REST design.
+
+## Production improvements
+
+For a production deployment I would typically add PostgreSQL, schema migrations, authentication/authorization, rate limiting, structured logging, Docker, API documentation and deployment monitoring.
