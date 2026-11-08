@@ -22,6 +22,14 @@ This project is designed to show practical backend engineering skills that are u
 - Automated API tests with `pytest`
 - GitHub Actions CI on pushes and pull requests
 
+## Screenshots
+
+Live responses from the running API:
+
+![Product list API response](screenshots/products-response.png)
+
+![Health check API response](screenshots/health-response.png)
+
 ## API endpoints
 
 | Method | Endpoint | Purpose |
